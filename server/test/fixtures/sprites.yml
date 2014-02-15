@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  velocity_x: 1.5
+  velocity_y: 1.5
+  turn_velocity: 1.5
+  name: MyString
+
+two:
+  velocity_x: 1.5
+  velocity_y: 1.5
+  turn_velocity: 1.5
+  name: MyString

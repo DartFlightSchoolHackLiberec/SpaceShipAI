@@ -1,4 +1,11 @@
 SpaceShipAI::Application.routes.draw do
+  post "api/games/:game_id/ships/:ship_id", :to => 'api#enter'
+  delete "api/games/:game_id/ships/:ship_id", :to => 'api#exit'
+  put "api/games/:game_id/refresh", :to => 'api#refresh'
+  get "api/games/:game_id", :to => 'api#fetch'
+  put "api/games/:game_id/ships/:ship_id", :to => 'api#update'
+  get "api/games/:game_id/screen(/:ship_id)", :to => 'api#screen'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
