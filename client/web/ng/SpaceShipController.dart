@@ -4,6 +4,8 @@ import 'package:angular/angular.dart';
 @MirrorsUsed(targets: const['recipe_book'], override: '*')
 import 'dart:mirrors';
 
+import '../SpaceShip.dart';
+
 /* Use the @NgController annotation to indicate that this class is an
  * Angular controller. Angular will instantiate the controller if
  * it finds an element matching its selector in the DOM.
@@ -28,6 +30,7 @@ class SpaceShipController {
   String upDown = '3';
   String forwardBack = '4';
   bool isSending = false;
+  SpaceShip ship;
   
   List<ApiCall> apiCalls = [];
   
@@ -38,45 +41,13 @@ class SpaceShipController {
   
   void flushApiCalls() {
     isSending = true;
-    //TODO: Get api url
+    //TODO: Get api url - use update()    
   }
   
-  List<Recipe> recipes;
   SpaceShipController() {
-    recipes = _loadData();
+    ship = new SpaceShip(5, 10, 'green');
   }
 
-  Recipe selectedRecipe;
-
-  void selectRecipe(Recipe recipe) {
-    selectedRecipe = recipe;
-  }
-
-  List<Recipe> _loadData() {
-    return [
-      new Recipe('My Appetizer','Appetizers',
-          ["Ingredient 1", "Ingredient 2"],
-          "Some Directions", 1),
-      new Recipe('My Salad','Salads',
-          ["Ingredient 1", "Ingredient 2"],
-          "Some Directions", 3),
-      new Recipe('My Soup','Soups',
-          ["Ingredient 1", "Ingredient 2"],
-          "Some Directions", 4),
-      new Recipe('My Main Dish','Main Dishes',
-          ["Ingredient 1", "Ingredient 2"],
-          "Some Directions", 2),
-      new Recipe('My Side Dish','Side Dishes',
-          ["Ingredient 1", "Ingredient 2"],
-          "Some Directions", 3),
-      new Recipe('My Awesome Dessert','Desserts',
-          ["Ingredient 1", "Ingredient 2"],
-          "Some Directions", 5),
-      new Recipe('My So-So Dessert','Desserts',
-          ["Ingredient 1", "Ingredient 2"],
-          "Some Directions", 3),
-    ];
-  }
 }
 
 class ApiCall {
@@ -88,17 +59,6 @@ class ApiCall {
   ApiCall(this.turn, this.upDown, this.forwardBack) {
     this.date = new DateTime.now();    
   }
-}
-
-class Recipe {
-  String name;
-  String category;
-  List<String> ingredients;
-  String directions;
-  int rating;
-
-  Recipe(this.name, this.category, this.ingredients, this.directions,
-      this.rating);
 }
 
 class SpaceShipModule extends Module {

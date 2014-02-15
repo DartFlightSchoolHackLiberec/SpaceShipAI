@@ -24,11 +24,12 @@
         <button class="btn btn-primary" ng-click="shipCtrl.addToApiCalls()" type="button">Add to API Calls</button>
         <button class="btn btn-default" ng-click="shipCtrl.flushApiCalls()" type="button" ng-disabled="shipCtrl.isSending">Refresh</button>
     </form>
+       
+    <canvas class="visualization"></canvas>
+    
     
     {{shipCtrl.apiCalls}}
     {{shipCtrl.apiCalls.length}}
-    
-    <canvas class="visualization"></canvas>
         
     <script type="application/dart" src="spaceshipai.dart"></script>
     <script src="packages/browser/dart.js"></script>    
