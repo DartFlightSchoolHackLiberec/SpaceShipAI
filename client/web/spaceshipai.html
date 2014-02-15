@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>SpaceShip AI</title>
+    <link rel="stylesheet" href="spaceshipai.css">
+  </head>
+  <body ng-controller="ship-control">
+    <h1>SpaceShip AI</h1>
+    
+    {{ctrl.turn}}
+    
+    <form>
+        <label>
+        Turn: <input type="number" ng-model="turn">
+        </label>
+        <label>
+        Up or down: <input type="number" ng-model="upDown">
+        </label>
+        <label>
+        Forward or backward: <input type="number" ng-model="forwardBack">
+        </label>
+        
+        <button type="button" ng-disable="isSending">Refresh</button>
+    </form>
+    
+    <canvas class="visualization"></canvas>
+        
+    <div id="sample_container_id">
+      <p id="sample_text_id"></p>
+    </div>
+
+    <script type="application/dart" src="spaceshipai.dart"></script>
+    <script src="packages/browser/dart.js"></script>    
+    <script src="packages/shadow_dom/shadow_dom.min.js"></script>
+
+  </body>
+</html>
