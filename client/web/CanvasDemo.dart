@@ -101,10 +101,9 @@ abstract class CanvasDemo {
    */
   void initializeAnimation() {
     // Setup the canvas.
-    canvas = new Element.tag('canvas') as CanvasElement
-        ..width = CANVAS_WIDTH
-        ..height = CANVAS_HEIGHT;
-    document.body.nodes.add(canvas);
+    canvas = document.querySelector("#space");
+       
+    //document.body.nodes.add(canvas);
     ctx = canvas.context2D;
 
     // Create the viewport transform with the center at extents.

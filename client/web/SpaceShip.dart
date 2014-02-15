@@ -1,3 +1,4 @@
+
 class SpaceShip  {
   String color; //rgg code 
   int x;
