@@ -1,5 +1,6 @@
 class ApiController < ApplicationController
   before_filter :load_game
+  before_filter :setup_cors
   before_filter :bootstrap, :only => [:screen]
   
   skip_before_action :verify_authenticity_token
@@ -99,6 +100,10 @@ private
   
   def random
     @random ||= Random.new
+  end
+  
+  def setup_cors
+    response.headers["Access-Control-Allow-Origin"] = "*"
   end
 
 end
