@@ -24,16 +24,21 @@ import 'dart:mirrors';
   publishAs: 'shipCtrl')  
 class SpaceShipController {
 
-  num turn = 0;
-  num upDown = 3;
-  num forwardBack = 4;
+  String turn = '0';
+  String upDown = '3';
+  String forwardBack = '4';
   bool isSending = false;
   
   List<ApiCall> apiCalls = [];
   
+  void addToApiCalls() {      
+    ApiCall apiCall = new ApiCall(int.parse(turn), int.parse(upDown), int.parse(forwardBack));
+    apiCalls.add(apiCall);
+  }
+  
   void flushApiCalls() {
     isSending = true;
-    //console.log('flushed');    
+    //TODO: Get api url
   }
   
   List<Recipe> recipes;
