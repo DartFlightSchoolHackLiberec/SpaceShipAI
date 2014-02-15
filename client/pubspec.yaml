@@ -2,5 +2,5 @@ name: SpaceShipAI
 description: A sample web application
 dependencies:
   angular: any
+  box2d: any
   browser: any
-  stagexl: any

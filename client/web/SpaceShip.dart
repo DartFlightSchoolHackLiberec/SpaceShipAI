@@ -1,6 +1,4 @@
-import 'package:stagexl/stagexl.dart';
-
-class SpaceShip extends Bitmap implements Animatable {
+class SpaceShip  {
   String color; //rgg code 
   int x;
   int y;
@@ -8,11 +6,11 @@ class SpaceShip extends Bitmap implements Animatable {
   int speedy;
   int size;
   
-  SpaceShip(BitmapData bitmapData, this.x, this.y, this.size, this.color) {
+  SpaceShip(this.x, this.y, this.size, this.color) {
     
   }
   
-  SpaceShip.withoutColor(BitmapData bitmapData, this.x, this.y, this.size) {
+  SpaceShip.withoutColor(this.x, this.y, this.size) {
     color = 'red';
   }
   
