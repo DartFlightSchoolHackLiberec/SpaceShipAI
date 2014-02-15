@@ -1,0 +1,2 @@
+class Meteorit < Sprite
+end
