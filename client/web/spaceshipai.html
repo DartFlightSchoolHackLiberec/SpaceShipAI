@@ -21,7 +21,7 @@
         Forward or backward: <input type="number" ng-model="shipCtrl.forwardBack">
         </label>
         
-        <button class="btn btn-primary" type="button" ng-disable="isSending">Refresh</button>
+        <button class="btn btn-primary" ng-click="shipCtrl.flushApiCalls()" type="button" ng-disabled="shipCtrl.isSending">Refresh</button>
     </form>
     
     <canvas class="visualization"></canvas>

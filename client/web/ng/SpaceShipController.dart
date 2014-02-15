@@ -27,6 +27,14 @@ class SpaceShipController {
   num turn = 0;
   num upDown = 3;
   num forwardBack = 4;
+  bool isSending = false;
+  
+  List<ApiCall> apiCalls = [];
+  
+  void flushApiCalls() {
+    isSending = true;
+    //console.log('flushed');    
+  }
   
   List<Recipe> recipes;
   SpaceShipController() {
@@ -63,6 +71,17 @@ class SpaceShipController {
           ["Ingredient 1", "Ingredient 2"],
           "Some Directions", 3),
     ];
+  }
+}
+
+class ApiCall {
+  int turn;
+  int upDown;
+  int forwardBack;
+  DateTime date;
+  
+  ApiCall(this.turn, this.upDown, this.forwardBack) {
+    this.date = new DateTime.now();    
   }
 }
 
