@@ -4,7 +4,6 @@ import 'package:angular/angular.dart';
 @MirrorsUsed(targets: const['recipe_book'], override: '*')
 import 'dart:mirrors';
 
-import '../SpaceShip.dart';
 
 /* Use the @NgController annotation to indicate that this class is an
  * Angular controller. Angular will instantiate the controller if
@@ -30,7 +29,6 @@ class SpaceShipController {
   String upDown = '3';
   String forwardBack = '4';
   bool isSending = false;
-  SpaceShip ship;
   
   List<ApiCall> apiCalls = [];
   
@@ -45,7 +43,8 @@ class SpaceShipController {
   }
   
   SpaceShipController() {
-    ship = new SpaceShip(5, 10, 3, 'green');
+    
+    
   }
 
 }

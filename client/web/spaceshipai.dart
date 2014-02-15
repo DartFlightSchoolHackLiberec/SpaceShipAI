@@ -2,6 +2,7 @@ import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:stagexl/stagexl.dart';
 import 'ng/SpaceShipController.dart';
+import 'SpaceContainer.dart';
 
 Stage stage;
 RenderLoop renderLoop;
@@ -21,10 +22,7 @@ void main() {
     
     resourceManager.addBitmapData('spaceship', 'resources/spaceship.png');
     
-    resourceManager.load().then((result) {
-      var spaceship = resourceManager.getBitmapData('spaceship');
-      //var plop = resourceManager.getSound('plop');
-      //var flowers = resourceManager.getTextureAtlas('fl');
-      //var daisy = flowers.getBitmapData('daisy');
-    });
+    stage.addChild(new SpaceContainer(resourceManager));
+    
+    
 }
