@@ -45,7 +45,7 @@ class SpaceShipController {
   }
   
   SpaceShipController() {
-    ship = new SpaceShip(5, 10, 'green');
+    ship = new SpaceShip(5, 10, 3, 'green');
   }
 
 }

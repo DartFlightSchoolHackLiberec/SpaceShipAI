@@ -3,12 +3,13 @@ class SpaceShip {
   int x;
   int y;
   int speed;
+  int size;
   
-  SpaceShip(this.x, this.y, this.color) {
+  SpaceShip(this.x, this.y, this.size, this.color) {
     
   }
   
-  SpaceShip.withoutColor(this.x, this.y) {
+  SpaceShip.withoutColor(this.x, this.y, this.size) {
     color = 'red';
   }
 }
