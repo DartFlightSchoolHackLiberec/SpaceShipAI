@@ -4,27 +4,24 @@
   <head>
     <meta charset="utf-8">
     <title>SpaceShip AI</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="spaceshipai.css">
   </head>
   <body ship-control>
     <h1>SpaceShip AI</h1>
-        
-        {{turn}}
-        
-        {{upDown}}
-        
+                
     <form>
         <label>
-        Turn: <input type="number" ng-model="turn">
+        Turn: <input type="number" ng-model="shipCtrl.turn">
         </label>
         <label>
-        Up or down: <input type="number" ng-model="upDown">
+        Up or down: <input type="number" ng-model="shipCtrl.upDown">
         </label>
         <label>
-        Forward or backward: <input type="number" ng-model="forwardBack">
+        Forward or backward: <input type="number" ng-model="shipCtrl.forwardBack">
         </label>
         
-        <button type="button" ng-disable="isSending">Refresh</button>
+        <button class="btn btn-primary" type="button" ng-disable="isSending">Refresh</button>
     </form>
     
     <canvas class="visualization"></canvas>
