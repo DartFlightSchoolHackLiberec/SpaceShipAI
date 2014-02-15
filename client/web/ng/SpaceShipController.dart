@@ -1,8 +1,33 @@
+import 'package:angular/angular.dart';
+
+// Temporary, please follow https://github.com/angular/angular.dart/issues/476
+@MirrorsUsed(targets: const['recipe_book'], override: '*')
+import 'dart:mirrors';
+
+/* Use the @NgController annotation to indicate that this class is an
+ * Angular controller. Angular will instantiate the controller if
+ * it finds an element matching its selector in the DOM.
+ *
+ * The selector field defines the CSS selector that will trigger the
+ * controller. It can be any valid CSS selector which does not cross
+ * element boundaries.
+ *
+ * The publishAs field specifies that the controller instance should be
+ * assigned to the current scope under the name specified.
+ *
+ * The controller's public fields are available for data binding from the view.
+ * Similarly, the controller's public methods can be invoked from the view.
+ */
+
 @NgController(
   selector: '[ship-control]',
-  publishAs: 'ctrl')  
-  class SpaceShipController {
+  publishAs: 'shipCtrl')  
+class SpaceShipController {
 
+  num turn = 0;
+  num upDown = 3;
+  num forwardBack = 4;
+  
   List<Recipe> recipes;
   SpaceShipController() {
     recipes = _loadData();
@@ -58,6 +83,3 @@ class SpaceShipModule extends Module {
   }
 }
 
-void main() {
-  ngBootstrap(module: new MyAppModule());
-}

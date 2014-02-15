@@ -6,13 +6,11 @@
     <title>SpaceShip AI</title>
     <link rel="stylesheet" href="spaceshipai.css">
   </head>
-  <body ship-control>
+  <body ng-controller="ship-control">
     <h1>SpaceShip AI</h1>
-        
-        {{turn}}
-        
-        {{upDown}}
-        
+    
+    {{shipCtrl.turn}}
+    
     <form>
         <label>
         Turn: <input type="number" ng-model="turn">
@@ -29,6 +27,10 @@
     
     <canvas class="visualization"></canvas>
         
+    <div id="sample_container_id">
+      <p id="sample_text_id"></p>
+    </div>
+
     <script type="application/dart" src="spaceshipai.dart"></script>
     <script src="packages/browser/dart.js"></script>    
     <script src="packages/shadow_dom/shadow_dom.min.js"></script>
