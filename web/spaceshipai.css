@@ -13,7 +13,14 @@ h1, p {
 }
 
 label {
+  width: 200px;
   display: block;
+}
+
+.visualization {
+  width: 600px;
+  height: 400px;
+  background-color: #aaa;
 }
 
 #sample_container_id {
